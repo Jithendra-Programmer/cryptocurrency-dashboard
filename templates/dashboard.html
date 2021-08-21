@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+        <title>Coin Dashboard</title>
+    </head>
+    <body>
+    
+        <div class="body">
+
+            <div class="navbar">
+                <a href="/"><h1>Coin mono</h1></a>
+            </div>
+
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                {
+                    "symbols": [
+                      {
+                        "proName": "BITSTAMP:BTCUSD",
+                        "title": "BTC/USD"
+                      },
+                      {
+                        "proName": "BITSTAMP:ETHUSD",
+                        "title": "ETH/USD"
+                      },
+                      {
+                        "description": "XRP/USD",
+                        "proName": "BITSTAMP:XRPUSD"
+                      },
+                      {
+                        "description": "BCH/USD",
+                        "proName": "BITSTAMP:BCHUSD"
+                      },
+                      {
+                        "description": "USDT/USD",
+                        "proName": "BITSTAMP:USDTUSD"
+                      }
+                    ],
+                    "showSymbolLogo": true,
+                    "colorTheme": "light",
+                    "isTransparent": false,
+                    "displayMode": "adaptive",
+                    "locale": "in"
+                }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+
+            <div class="content">
+
+                <div class="left-data">
+                    <div class="card">
+                        <div class="header">
+                            <img class="coin-image" src="{{ data['image']['large'] }}" alt="">
+                            <h1 id="dashboard-coin-name">{{ data['name'] }}</h1>
+                            <h1>${{ price }}</h1>
+                        </div>
+                        <div class="details">
+                            <h1>market cap: <span>${{ market_cap }}</span></h1>
+                            <h1>24h VOL: <span class="{{ color }}">${{ vol }}</span>  (<span class="{{ color }}">{{ vol_in_perpercentage }}%</span>)</h1>
+                            <h1>24h Low: <span>${{ low_24h }}</span></h1>
+                            <h1>24h High: <span>${{ high_24h }}</span></h1>
+                        </div>
+                    </div>
+
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container indicator">
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+                            {
+                                "interval": "1m",
+                                "width": "100%",
+                                "isTransparent": false,
+                                "height": "100%",
+                                "symbol": "COINBASE:{{ symbol }}USD",
+                                "showIntervalTabs": true,
+                                "locale": "in",
+                                "colorTheme": "light"
+                            }
+                        </script>
+                    </div>
+                    <!-- TradingView Widget END -->
+                </div>
+
+                <div class="tradingview-widget-container graph">
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                        new TradingView.widget(
+                            {
+            
+                                "autosize": true,
+                                "symbol": "COINBASE:{{ symbol }}USD",
+                                "interval": "D",
+                                "timezone": "Asia/Kolkata",
+                                "theme": "light",
+                                "style": "1",
+                                "locale": "in",
+                                "toolbar_bg": "#f1f3f6",
+                                "enable_publishing": false,
+                                "allow_symbol_change": true,
+                                "container_id": "tradingview_9d0e1"
+                            }
+                        );
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

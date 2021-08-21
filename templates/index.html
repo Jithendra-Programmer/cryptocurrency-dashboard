@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>My Coin</title>
+  </head>
+  <body id="body" onload="main()">
+    
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+      <a href="/"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" width="200px"></a>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Join us</button>
+    </div>
+    <div class="heading container">
+      <h2>Top 50 Coins By Market Capitalization</h2>
+    </div>
+
+    <div class="table-container">
+        <table class="table">
+            <thead class="sticky-top thead">
+                <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Coin</th>
+                    <th scope="col">Symbol</th>
+                    <th scope="col">Mar Cap</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">24H</th>
+                    <th scope="col">24H Vol</th>
+                    <th scope="col">ATH</th>
+                    <th scope="col">ATL</th>
+                </tr>
+            </thead>
+            <tbody class="table-font" id="table">
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

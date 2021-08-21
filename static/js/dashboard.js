@@ -1,0 +1,3 @@
+import {coin} from './script'
+
+

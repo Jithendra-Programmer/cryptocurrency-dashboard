@@ -1,0 +1,102 @@
+
+* {
+    padding: 0px;
+    margin: 0px !important;
+}
+
+
+.navbar {
+    height: 5vh;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.navbar>a {
+    height: 100%;
+    text-decoration: none;
+}
+
+.navbar>a>h1 {
+    font-size: 4vh;
+    margin: 0px !important;
+
+}
+
+
+.content {
+    display: flex;
+}
+
+.left-data {
+    /* padding: 20px 0px; */
+    width: 30%;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 90%;
+    background-color: lightgray;
+    word-wrap: wrap;   
+    padding: 10px;
+    color: black;
+}
+
+.header {
+    padding: 10px;
+    padding-top: 10px;
+    line-height: 4.5vh;
+}
+
+
+.header>h1 {
+    font-size: 3vh !important;
+}
+
+.details>h1 {
+    font-size: 2.5vh;
+    line-height: 4vh;
+}
+
+.coin-image {
+    width: 40%;
+    padding: 10px;
+    padding-top: 0px;
+}
+
+.indicator {
+    border-top: 1px solid gray;
+    width: 100% !important;
+    height: 60% !important;
+}
+
+
+.graph {
+    width: 70%;
+    height: 88vh;
+    float: right;
+    padding-left: 10px;
+    border-left: 1px solid gray;
+}
+
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.none {
+    color: white;
+}
